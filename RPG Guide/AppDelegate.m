@@ -19,8 +19,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    MainViewController *controller = (MainViewController *)self.window.rootViewController;
+    [self createDBifNeeded];
+    
+//    MainViewController *controller = (MainViewController *)self.window.rootViewController;
+//    controller.managedObjectContext = self.managedObjectContext;
+    
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    MainViewController *controller = (MainViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
 							
@@ -145,6 +152,43 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Custom methods
+
+-(void) createDBifNeeded{
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *documentsDir = [self applicationDocumentsDirectory];
+    NSURL *writebleDBPath = [documentsDir URLByAppendingPathComponent:@"RPG_Guide.sqlite"];
+    NSURL *writebleDBPath2 = [documentsDir URLByAppendingPathComponent:@"config.plist"];
+
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDirectory, YES) objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"RPG_Guide.sqlite"];
+    NSString *path2 = [documentsDirectory stringByAppendingPathComponent:@"config.plist"];
+    
+    BOOL dbexist = [fileManager fileExistsAtPath:path];
+    
+    if (!dbexist) {
+        NSURL *defaultDBPath = [[NSBundle mainBundle] URLForResource:@"RPG_Guide" withExtension:@"sqlite"];
+        NSError *error;
+        BOOL sucess = [fileManager copyItemAtURL:defaultDBPath toURL:writebleDBPath error:&error];
+        if (!sucess) {
+            NSAssert1(0, @"Falha em criar o banco para escrita com o erro `%@'.",[error localizedDescription]);
+        }
+    }
+    
+    BOOL dbexist2 = [fileManager fileExistsAtPath:path2];
+    
+    if (!dbexist2) {
+        NSURL *defaultDBPath = [[NSBundle mainBundle] URLForResource:@"config" withExtension:@"plist"];
+        NSError *error;
+        BOOL sucess = [fileManager copyItemAtURL:defaultDBPath toURL:writebleDBPath2 error:&error];
+        if (!sucess) {
+            NSAssert1(0, @"Falha em criar a propety list para escrita com o erro `%@'.",[error localizedDescription]);
+        }
+    }
 }
 
 @end
