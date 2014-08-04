@@ -8,10 +8,12 @@
 
 #import "FlipsideViewController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+@interface MainViewController : UIViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@property (nonatomic, retain) NSString *estilo;
+@property (nonatomic, retain) NSString *prefixo;
+@property (nonatomic, retain) NSString *sufixo;
 
 @end
