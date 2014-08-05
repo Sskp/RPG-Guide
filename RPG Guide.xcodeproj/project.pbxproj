@@ -16,7 +16,6 @@
 		AF1E7C14197EECD60053486A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C13197EECD60053486A /* AppDelegate.m */; };
 		AF1E7C17197EECD60053486A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1E7C15197EECD60053486A /* Main_iPhone.storyboard */; };
 		AF1E7C1A197EECD60053486A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1E7C18197EECD60053486A /* Main_iPad.storyboard */; };
-		AF1E7C1D197EECD60053486A /* RPG_Guide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C1B197EECD60053486A /* RPG_Guide.xcdatamodeld */; };
 		AF1E7C20197EECD60053486A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C1F197EECD60053486A /* MainViewController.m */; };
 		AF1E7C23197EECD60053486A /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C22197EECD60053486A /* FlipsideViewController.m */; };
 		AF1E7C25197EECD60053486A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1E7C24197EECD60053486A /* Images.xcassets */; };
@@ -26,6 +25,38 @@
 		AF1E7C2F197EECD60053486A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1E7C07197EECD60053486A /* CoreData.framework */; };
 		AF1E7C37197EECD60053486A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF1E7C35197EECD60053486A /* InfoPlist.strings */; };
 		AF1E7C39197EECD60053486A /* RPG_GuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C38197EECD60053486A /* RPG_GuideTests.m */; };
+		AF1E7C44197EED510053486A /* RPG_Guide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C42197EED510053486A /* RPG_Guide.xcdatamodeld */; };
+		AF1E7C49197EEF3B0053486A /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C48197EEF3B0053486A /* Util.m */; };
+		AF1E7C4C197EF0700053486A /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF1E7C4A197EF0700053486A /* config.plist */; };
+		AF1E7C4D197EF0700053486A /* RPG_Guide.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = AF1E7C4B197EF0700053486A /* RPG_Guide.sqlite */; };
+		AF1E7C50197EF87A0053486A /* ListaAlquimiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C4F197EF87A0053486A /* ListaAlquimiaViewController.m */; };
+		AF1E7C71197EF9EA0053486A /* Raridade.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C70197EF9EA0053486A /* Raridade.m */; };
+		AF1E7C74197EF9EB0053486A /* TipoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C73197EF9EB0053486A /* TipoItem.m */; };
+		AF1E7C77197EF9EB0053486A /* ItemMagico.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C76197EF9EB0053486A /* ItemMagico.m */; };
+		AF1E7C7A197EF9EB0053486A /* Alquimia.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C79197EF9EB0053486A /* Alquimia.m */; };
+		AF1E7C7D197EF9EB0053486A /* Busca.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C7C197EF9EB0053486A /* Busca.m */; };
+		AF1E7C80197EF9EB0053486A /* TipoAlquimia.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C7F197EF9EB0053486A /* TipoAlquimia.m */; };
+		AF1E7C83197EF9EB0053486A /* ItemComum.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C82197EF9EB0053486A /* ItemComum.m */; };
+		AF1E7C86197EF9EB0053486A /* Poder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C85197EF9EB0053486A /* Poder.m */; };
+		AF1E7C89197EF9EB0053486A /* Categoria.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C88197EF9EB0053486A /* Categoria.m */; };
+		AF1E7C8C197F000E0053486A /* AdicionarAlquimiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C8B197F000E0053486A /* AdicionarAlquimiaViewController.m */; };
+		AF1E7C91197F00900053486A /* RaridadeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C8E197F00900053486A /* RaridadeSelectionViewController.m */; };
+		AF1E7C92197F00900053486A /* TipoAlquimiaSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C90197F00900053486A /* TipoAlquimiaSelectionViewController.m */; };
+		AF1E7C95197F6A060053486A /* DetalheAlquimiaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E7C94197F6A060053486A /* DetalheAlquimiaViewController.m */; };
+		AF2C8C19198ABF01004DC762 /* AdicionarItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C12198ABF01004DC762 /* AdicionarItemViewController.m */; };
+		AF2C8C1A198ABF01004DC762 /* DetalheItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C14198ABF01004DC762 /* DetalheItemViewController.m */; };
+		AF2C8C1B198ABF01004DC762 /* ListaItemComumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C16198ABF01004DC762 /* ListaItemComumViewController.m */; };
+		AF2C8C1F198AD696004DC762 /* TipoItemSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C1E198AD696004DC762 /* TipoItemSelectionViewController.m */; };
+		AF2C8C22198AD6C1004DC762 /* CategoriaSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C21198AD6C1004DC762 /* CategoriaSelectionViewController.m */; };
+		AF2C8C2B198C7436004DC762 /* AdicionarPoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C26198C7436004DC762 /* AdicionarPoderViewController.m */; };
+		AF2C8C2C198C7436004DC762 /* DetalharPoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C28198C7436004DC762 /* DetalharPoderViewController.m */; };
+		AF2C8C2D198C7436004DC762 /* ListaPoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C2A198C7436004DC762 /* ListaPoderViewController.m */; };
+		AF2C8C37198DFFCC004DC762 /* AdicionarItemMagicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C30198DFFCC004DC762 /* AdicionarItemMagicoViewController.m */; };
+		AF2C8C38198DFFCC004DC762 /* DetalharItemMagicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C32198DFFCC004DC762 /* DetalharItemMagicoViewController.m */; };
+		AF2C8C39198DFFCC004DC762 /* ListaItemMagicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C34198DFFCC004DC762 /* ListaItemMagicoViewController.m */; };
+		AF2C8C3A198DFFCC004DC762 /* SelecionaPoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C36198DFFCC004DC762 /* SelecionaPoderViewController.m */; };
+		AF2C8C3D198E0068004DC762 /* SelecionaItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C3C198E0068004DC762 /* SelecionaItemViewController.m */; };
+		AF2C8C40198E0291004DC762 /* VisualizarItemMagicoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C8C3F198E0291004DC762 /* VisualizarItemMagicoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +83,6 @@
 		AF1E7C13197EECD60053486A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AF1E7C16197EECD60053486A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		AF1E7C19197EECD60053486A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		AF1E7C1C197EECD60053486A /* RPG_Guide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RPG_Guide.xcdatamodel; sourceTree = "<group>"; };
 		AF1E7C1E197EECD60053486A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		AF1E7C1F197EECD60053486A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		AF1E7C21197EECD60053486A /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
@@ -63,6 +93,67 @@
 		AF1E7C34197EECD60053486A /* RPG GuideTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RPG GuideTests-Info.plist"; sourceTree = "<group>"; };
 		AF1E7C36197EECD60053486A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AF1E7C38197EECD60053486A /* RPG_GuideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPG_GuideTests.m; sourceTree = "<group>"; };
+		AF1E7C43197EED510053486A /* RPG_Guide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RPG_Guide.xcdatamodel; sourceTree = "<group>"; };
+		AF1E7C47197EEF3B0053486A /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		AF1E7C48197EEF3B0053486A /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		AF1E7C4A197EF0700053486A /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		AF1E7C4B197EF0700053486A /* RPG_Guide.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = RPG_Guide.sqlite; sourceTree = "<group>"; };
+		AF1E7C4E197EF87A0053486A /* ListaAlquimiaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaAlquimiaViewController.h; sourceTree = "<group>"; };
+		AF1E7C4F197EF87A0053486A /* ListaAlquimiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaAlquimiaViewController.m; sourceTree = "<group>"; };
+		AF1E7C6F197EF9EA0053486A /* Raridade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Raridade.h; path = Model/Raridade.h; sourceTree = "<group>"; };
+		AF1E7C70197EF9EA0053486A /* Raridade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Raridade.m; path = Model/Raridade.m; sourceTree = "<group>"; };
+		AF1E7C72197EF9EB0053486A /* TipoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TipoItem.h; path = Model/TipoItem.h; sourceTree = "<group>"; };
+		AF1E7C73197EF9EB0053486A /* TipoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TipoItem.m; path = Model/TipoItem.m; sourceTree = "<group>"; };
+		AF1E7C75197EF9EB0053486A /* ItemMagico.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemMagico.h; path = Model/ItemMagico.h; sourceTree = "<group>"; };
+		AF1E7C76197EF9EB0053486A /* ItemMagico.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemMagico.m; path = Model/ItemMagico.m; sourceTree = "<group>"; };
+		AF1E7C78197EF9EB0053486A /* Alquimia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alquimia.h; path = Model/Alquimia.h; sourceTree = "<group>"; };
+		AF1E7C79197EF9EB0053486A /* Alquimia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alquimia.m; path = Model/Alquimia.m; sourceTree = "<group>"; };
+		AF1E7C7B197EF9EB0053486A /* Busca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Busca.h; path = Model/Busca.h; sourceTree = "<group>"; };
+		AF1E7C7C197EF9EB0053486A /* Busca.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Busca.m; path = Model/Busca.m; sourceTree = "<group>"; };
+		AF1E7C7E197EF9EB0053486A /* TipoAlquimia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TipoAlquimia.h; path = Model/TipoAlquimia.h; sourceTree = "<group>"; };
+		AF1E7C7F197EF9EB0053486A /* TipoAlquimia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TipoAlquimia.m; path = Model/TipoAlquimia.m; sourceTree = "<group>"; };
+		AF1E7C81197EF9EB0053486A /* ItemComum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemComum.h; path = Model/ItemComum.h; sourceTree = "<group>"; };
+		AF1E7C82197EF9EB0053486A /* ItemComum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemComum.m; path = Model/ItemComum.m; sourceTree = "<group>"; };
+		AF1E7C84197EF9EB0053486A /* Poder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Poder.h; path = Model/Poder.h; sourceTree = "<group>"; };
+		AF1E7C85197EF9EB0053486A /* Poder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Poder.m; path = Model/Poder.m; sourceTree = "<group>"; };
+		AF1E7C87197EF9EB0053486A /* Categoria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Categoria.h; path = Model/Categoria.h; sourceTree = "<group>"; };
+		AF1E7C88197EF9EB0053486A /* Categoria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Categoria.m; path = Model/Categoria.m; sourceTree = "<group>"; };
+		AF1E7C8A197F000E0053486A /* AdicionarAlquimiaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdicionarAlquimiaViewController.h; sourceTree = "<group>"; };
+		AF1E7C8B197F000E0053486A /* AdicionarAlquimiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdicionarAlquimiaViewController.m; sourceTree = "<group>"; };
+		AF1E7C8D197F00900053486A /* RaridadeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaridadeSelectionViewController.h; sourceTree = "<group>"; };
+		AF1E7C8E197F00900053486A /* RaridadeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaridadeSelectionViewController.m; sourceTree = "<group>"; };
+		AF1E7C8F197F00900053486A /* TipoAlquimiaSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoAlquimiaSelectionViewController.h; sourceTree = "<group>"; };
+		AF1E7C90197F00900053486A /* TipoAlquimiaSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoAlquimiaSelectionViewController.m; sourceTree = "<group>"; };
+		AF1E7C93197F6A060053486A /* DetalheAlquimiaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheAlquimiaViewController.h; sourceTree = "<group>"; };
+		AF1E7C94197F6A060053486A /* DetalheAlquimiaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheAlquimiaViewController.m; sourceTree = "<group>"; };
+		AF2C8C11198ABF01004DC762 /* AdicionarItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdicionarItemViewController.h; sourceTree = "<group>"; };
+		AF2C8C12198ABF01004DC762 /* AdicionarItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdicionarItemViewController.m; sourceTree = "<group>"; };
+		AF2C8C13198ABF01004DC762 /* DetalheItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheItemViewController.h; sourceTree = "<group>"; };
+		AF2C8C14198ABF01004DC762 /* DetalheItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheItemViewController.m; sourceTree = "<group>"; };
+		AF2C8C15198ABF01004DC762 /* ListaItemComumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaItemComumViewController.h; sourceTree = "<group>"; };
+		AF2C8C16198ABF01004DC762 /* ListaItemComumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaItemComumViewController.m; sourceTree = "<group>"; };
+		AF2C8C1D198AD696004DC762 /* TipoItemSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoItemSelectionViewController.h; sourceTree = "<group>"; };
+		AF2C8C1E198AD696004DC762 /* TipoItemSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoItemSelectionViewController.m; sourceTree = "<group>"; };
+		AF2C8C20198AD6C1004DC762 /* CategoriaSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaSelectionViewController.h; sourceTree = "<group>"; };
+		AF2C8C21198AD6C1004DC762 /* CategoriaSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaSelectionViewController.m; sourceTree = "<group>"; };
+		AF2C8C25198C7435004DC762 /* AdicionarPoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdicionarPoderViewController.h; sourceTree = "<group>"; };
+		AF2C8C26198C7436004DC762 /* AdicionarPoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdicionarPoderViewController.m; sourceTree = "<group>"; };
+		AF2C8C27198C7436004DC762 /* DetalharPoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalharPoderViewController.h; sourceTree = "<group>"; };
+		AF2C8C28198C7436004DC762 /* DetalharPoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalharPoderViewController.m; sourceTree = "<group>"; };
+		AF2C8C29198C7436004DC762 /* ListaPoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaPoderViewController.h; sourceTree = "<group>"; };
+		AF2C8C2A198C7436004DC762 /* ListaPoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaPoderViewController.m; sourceTree = "<group>"; };
+		AF2C8C2F198DFFCC004DC762 /* AdicionarItemMagicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdicionarItemMagicoViewController.h; sourceTree = "<group>"; };
+		AF2C8C30198DFFCC004DC762 /* AdicionarItemMagicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdicionarItemMagicoViewController.m; sourceTree = "<group>"; };
+		AF2C8C31198DFFCC004DC762 /* DetalharItemMagicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalharItemMagicoViewController.h; sourceTree = "<group>"; };
+		AF2C8C32198DFFCC004DC762 /* DetalharItemMagicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalharItemMagicoViewController.m; sourceTree = "<group>"; };
+		AF2C8C33198DFFCC004DC762 /* ListaItemMagicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaItemMagicoViewController.h; sourceTree = "<group>"; };
+		AF2C8C34198DFFCC004DC762 /* ListaItemMagicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaItemMagicoViewController.m; sourceTree = "<group>"; };
+		AF2C8C35198DFFCC004DC762 /* SelecionaPoderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelecionaPoderViewController.h; sourceTree = "<group>"; };
+		AF2C8C36198DFFCC004DC762 /* SelecionaPoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelecionaPoderViewController.m; sourceTree = "<group>"; };
+		AF2C8C3B198E0068004DC762 /* SelecionaItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelecionaItemViewController.h; sourceTree = "<group>"; };
+		AF2C8C3C198E0068004DC762 /* SelecionaItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelecionaItemViewController.m; sourceTree = "<group>"; };
+		AF2C8C3E198E0291004DC762 /* VisualizarItemMagicoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualizarItemMagicoViewController.h; sourceTree = "<group>"; };
+		AF2C8C3F198E0291004DC762 /* VisualizarItemMagicoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisualizarItemMagicoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +216,8 @@
 		AF1E7C09197EECD60053486A /* RPG Guide */ = {
 			isa = PBXGroup;
 			children = (
+				AF1E7C46197EEF100053486A /* Classe */,
+				AF1E7C45197EED650053486A /* Model */,
 				AF1E7C12197EECD60053486A /* AppDelegate.h */,
 				AF1E7C13197EECD60053486A /* AppDelegate.m */,
 				AF1E7C15197EECD60053486A /* Main_iPhone.storyboard */,
@@ -134,7 +227,6 @@
 				AF1E7C21197EECD60053486A /* FlipsideViewController.h */,
 				AF1E7C22197EECD60053486A /* FlipsideViewController.m */,
 				AF1E7C24197EECD60053486A /* Images.xcassets */,
-				AF1E7C1B197EECD60053486A /* RPG_Guide.xcdatamodeld */,
 				AF1E7C0A197EECD60053486A /* Supporting Files */,
 			);
 			path = "RPG Guide";
@@ -143,6 +235,8 @@
 		AF1E7C0A197EECD60053486A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AF1E7C4A197EF0700053486A /* config.plist */,
+				AF1E7C4B197EF0700053486A /* RPG_Guide.sqlite */,
 				AF1E7C0B197EECD60053486A /* RPG Guide-Info.plist */,
 				AF1E7C0C197EECD60053486A /* InfoPlist.strings */,
 				AF1E7C0F197EECD60053486A /* main.m */,
@@ -167,6 +261,119 @@
 				AF1E7C35197EECD60053486A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF1E7C45197EED650053486A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF1E7C87197EF9EB0053486A /* Categoria.h */,
+				AF1E7C88197EF9EB0053486A /* Categoria.m */,
+				AF1E7C84197EF9EB0053486A /* Poder.h */,
+				AF1E7C85197EF9EB0053486A /* Poder.m */,
+				AF1E7C81197EF9EB0053486A /* ItemComum.h */,
+				AF1E7C82197EF9EB0053486A /* ItemComum.m */,
+				AF1E7C7E197EF9EB0053486A /* TipoAlquimia.h */,
+				AF1E7C7F197EF9EB0053486A /* TipoAlquimia.m */,
+				AF1E7C7B197EF9EB0053486A /* Busca.h */,
+				AF1E7C7C197EF9EB0053486A /* Busca.m */,
+				AF1E7C78197EF9EB0053486A /* Alquimia.h */,
+				AF1E7C79197EF9EB0053486A /* Alquimia.m */,
+				AF1E7C75197EF9EB0053486A /* ItemMagico.h */,
+				AF1E7C76197EF9EB0053486A /* ItemMagico.m */,
+				AF1E7C72197EF9EB0053486A /* TipoItem.h */,
+				AF1E7C73197EF9EB0053486A /* TipoItem.m */,
+				AF1E7C6F197EF9EA0053486A /* Raridade.h */,
+				AF1E7C70197EF9EA0053486A /* Raridade.m */,
+				AF1E7C42197EED510053486A /* RPG_Guide.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AF1E7C46197EEF100053486A /* Classe */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C8C2E198DF708004DC762 /* Item Mágico */,
+				AF2C8C24198C4D67004DC762 /* Poderes */,
+				AF2C8C23198AD9E1004DC762 /* Seleçao */,
+				AF2C8C10198ABC2E004DC762 /* Item Comum */,
+				AF1E7C96197F6A140053486A /* Alquimia */,
+				AF1E7C47197EEF3B0053486A /* Util.h */,
+				AF1E7C48197EEF3B0053486A /* Util.m */,
+			);
+			name = Classe;
+			sourceTree = "<group>";
+		};
+		AF1E7C96197F6A140053486A /* Alquimia */ = {
+			isa = PBXGroup;
+			children = (
+				AF1E7C8A197F000E0053486A /* AdicionarAlquimiaViewController.h */,
+				AF1E7C8B197F000E0053486A /* AdicionarAlquimiaViewController.m */,
+				AF1E7C93197F6A060053486A /* DetalheAlquimiaViewController.h */,
+				AF1E7C94197F6A060053486A /* DetalheAlquimiaViewController.m */,
+				AF1E7C4E197EF87A0053486A /* ListaAlquimiaViewController.h */,
+				AF1E7C4F197EF87A0053486A /* ListaAlquimiaViewController.m */,
+			);
+			name = Alquimia;
+			sourceTree = "<group>";
+		};
+		AF2C8C10198ABC2E004DC762 /* Item Comum */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C8C11198ABF01004DC762 /* AdicionarItemViewController.h */,
+				AF2C8C12198ABF01004DC762 /* AdicionarItemViewController.m */,
+				AF2C8C13198ABF01004DC762 /* DetalheItemViewController.h */,
+				AF2C8C14198ABF01004DC762 /* DetalheItemViewController.m */,
+				AF2C8C15198ABF01004DC762 /* ListaItemComumViewController.h */,
+				AF2C8C16198ABF01004DC762 /* ListaItemComumViewController.m */,
+			);
+			name = "Item Comum";
+			sourceTree = "<group>";
+		};
+		AF2C8C23198AD9E1004DC762 /* Seleçao */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C8C1D198AD696004DC762 /* TipoItemSelectionViewController.h */,
+				AF2C8C1E198AD696004DC762 /* TipoItemSelectionViewController.m */,
+				AF2C8C20198AD6C1004DC762 /* CategoriaSelectionViewController.h */,
+				AF2C8C21198AD6C1004DC762 /* CategoriaSelectionViewController.m */,
+				AF1E7C8D197F00900053486A /* RaridadeSelectionViewController.h */,
+				AF1E7C8E197F00900053486A /* RaridadeSelectionViewController.m */,
+				AF1E7C8F197F00900053486A /* TipoAlquimiaSelectionViewController.h */,
+				AF1E7C90197F00900053486A /* TipoAlquimiaSelectionViewController.m */,
+			);
+			name = "Seleçao";
+			sourceTree = "<group>";
+		};
+		AF2C8C24198C4D67004DC762 /* Poderes */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C8C25198C7435004DC762 /* AdicionarPoderViewController.h */,
+				AF2C8C26198C7436004DC762 /* AdicionarPoderViewController.m */,
+				AF2C8C27198C7436004DC762 /* DetalharPoderViewController.h */,
+				AF2C8C28198C7436004DC762 /* DetalharPoderViewController.m */,
+				AF2C8C29198C7436004DC762 /* ListaPoderViewController.h */,
+				AF2C8C2A198C7436004DC762 /* ListaPoderViewController.m */,
+			);
+			name = Poderes;
+			sourceTree = "<group>";
+		};
+		AF2C8C2E198DF708004DC762 /* Item Mágico */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C8C3E198E0291004DC762 /* VisualizarItemMagicoViewController.h */,
+				AF2C8C3F198E0291004DC762 /* VisualizarItemMagicoViewController.m */,
+				AF2C8C2F198DFFCC004DC762 /* AdicionarItemMagicoViewController.h */,
+				AF2C8C30198DFFCC004DC762 /* AdicionarItemMagicoViewController.m */,
+				AF2C8C31198DFFCC004DC762 /* DetalharItemMagicoViewController.h */,
+				AF2C8C32198DFFCC004DC762 /* DetalharItemMagicoViewController.m */,
+				AF2C8C33198DFFCC004DC762 /* ListaItemMagicoViewController.h */,
+				AF2C8C34198DFFCC004DC762 /* ListaItemMagicoViewController.m */,
+				AF2C8C3B198E0068004DC762 /* SelecionaItemViewController.h */,
+				AF2C8C3C198E0068004DC762 /* SelecionaItemViewController.m */,
+				AF2C8C36198DFFCC004DC762 /* SelecionaPoderViewController.m */,
+				AF2C8C35198DFFCC004DC762 /* SelecionaPoderViewController.h */,
+			);
+			name = "Item Mágico";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +456,8 @@
 				AF1E7C25197EECD60053486A /* Images.xcassets in Resources */,
 				AF1E7C17197EECD60053486A /* Main_iPhone.storyboard in Resources */,
 				AF1E7C0E197EECD60053486A /* InfoPlist.strings in Resources */,
+				AF1E7C4D197EF0700053486A /* RPG_Guide.sqlite in Resources */,
+				AF1E7C4C197EF0700053486A /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,11 +476,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1E7C8C197F000E0053486A /* AdicionarAlquimiaViewController.m in Sources */,
+				AF2C8C1A198ABF01004DC762 /* DetalheItemViewController.m in Sources */,
+				AF2C8C3D198E0068004DC762 /* SelecionaItemViewController.m in Sources */,
+				AF1E7C83197EF9EB0053486A /* ItemComum.m in Sources */,
+				AF1E7C7A197EF9EB0053486A /* Alquimia.m in Sources */,
+				AF2C8C37198DFFCC004DC762 /* AdicionarItemMagicoViewController.m in Sources */,
+				AF2C8C3A198DFFCC004DC762 /* SelecionaPoderViewController.m in Sources */,
+				AF1E7C92197F00900053486A /* TipoAlquimiaSelectionViewController.m in Sources */,
+				AF1E7C91197F00900053486A /* RaridadeSelectionViewController.m in Sources */,
+				AF1E7C89197EF9EB0053486A /* Categoria.m in Sources */,
+				AF1E7C80197EF9EB0053486A /* TipoAlquimia.m in Sources */,
+				AF2C8C40198E0291004DC762 /* VisualizarItemMagicoViewController.m in Sources */,
+				AF2C8C1F198AD696004DC762 /* TipoItemSelectionViewController.m in Sources */,
 				AF1E7C14197EECD60053486A /* AppDelegate.m in Sources */,
-				AF1E7C1D197EECD60053486A /* RPG_Guide.xcdatamodeld in Sources */,
+				AF1E7C49197EEF3B0053486A /* Util.m in Sources */,
 				AF1E7C10197EECD60053486A /* main.m in Sources */,
+				AF2C8C2C198C7436004DC762 /* DetalharPoderViewController.m in Sources */,
 				AF1E7C23197EECD60053486A /* FlipsideViewController.m in Sources */,
+				AF1E7C71197EF9EA0053486A /* Raridade.m in Sources */,
+				AF1E7C74197EF9EB0053486A /* TipoItem.m in Sources */,
+				AF1E7C44197EED510053486A /* RPG_Guide.xcdatamodeld in Sources */,
+				AF2C8C38198DFFCC004DC762 /* DetalharItemMagicoViewController.m in Sources */,
+				AF2C8C39198DFFCC004DC762 /* ListaItemMagicoViewController.m in Sources */,
+				AF2C8C2B198C7436004DC762 /* AdicionarPoderViewController.m in Sources */,
+				AF1E7C77197EF9EB0053486A /* ItemMagico.m in Sources */,
+				AF1E7C86197EF9EB0053486A /* Poder.m in Sources */,
 				AF1E7C20197EECD60053486A /* MainViewController.m in Sources */,
+				AF1E7C7D197EF9EB0053486A /* Busca.m in Sources */,
+				AF2C8C22198AD6C1004DC762 /* CategoriaSelectionViewController.m in Sources */,
+				AF2C8C2D198C7436004DC762 /* ListaPoderViewController.m in Sources */,
+				AF2C8C1B198ABF01004DC762 /* ListaItemComumViewController.m in Sources */,
+				AF1E7C50197EF87A0053486A /* ListaAlquimiaViewController.m in Sources */,
+				AF2C8C19198ABF01004DC762 /* AdicionarItemViewController.m in Sources */,
+				AF1E7C95197F6A060053486A /* DetalheAlquimiaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +724,7 @@
 				AF1E7C3E197EECD70053486A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF1E7C3F197EECD70053486A /* Build configuration list for PBXNativeTarget "RPG GuideTests" */ = {
 			isa = XCConfigurationList;
@@ -494,16 +733,17 @@
 				AF1E7C41197EECD70053486A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AF1E7C1B197EECD60053486A /* RPG_Guide.xcdatamodeld */ = {
+		AF1E7C42197EED510053486A /* RPG_Guide.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AF1E7C1C197EECD60053486A /* RPG_Guide.xcdatamodel */,
+				AF1E7C43197EED510053486A /* RPG_Guide.xcdatamodel */,
 			);
-			currentVersion = AF1E7C1C197EECD60053486A /* RPG_Guide.xcdatamodel */;
+			currentVersion = AF1E7C43197EED510053486A /* RPG_Guide.xcdatamodel */;
 			path = RPG_Guide.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

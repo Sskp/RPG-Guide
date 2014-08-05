@@ -1,4 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Alquimia" representedClassName="Alquimia">
+        <attribute name="custo" optional="YES" attributeType="Integer 32" defaultValueString="0.0"/>
+        <attribute name="dataCriacao" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descricao" optional="YES" attributeType="String"/>
+        <attribute name="duracao" optional="YES" attributeType="String"/>
+        <attribute name="nome" optional="YES" attributeType="String" indexed="YES"/>
+        <attribute name="preparo" optional="YES" attributeType="String"/>
+        <relationship name="raridade" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Raridade" inverseName="alquimia" inverseEntity="Raridade"/>
+        <relationship name="tipo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TipoAlquimia" inverseName="alquimia" inverseEntity="TipoAlquimia"/>
+    </entity>
+    <entity name="Busca" representedClassName="Busca" syncable="YES">
+        <relationship name="categoria" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="busca" inverseEntity="Categoria" syncable="YES"/>
+        <relationship name="raridade" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Raridade" inverseName="busca" inverseEntity="Raridade" syncable="YES"/>
+        <relationship name="tipoAlquimia" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TipoAlquimia" inverseName="busca" inverseEntity="TipoAlquimia" syncable="YES"/>
+        <relationship name="tipoItem" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TipoItem" inverseName="busca" inverseEntity="TipoItem" syncable="YES"/>
+    </entity>
+    <entity name="Categoria" representedClassName="Categoria" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="busca" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Busca" inverseName="categoria" inverseEntity="Busca" syncable="YES"/>
+        <relationship name="itemComum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemComum" inverseName="categoria" inverseEntity="ItemComum" syncable="YES"/>
+        <relationship name="itemMagico" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemMagico" inverseName="categoria" inverseEntity="ItemMagico" syncable="YES"/>
+        <relationship name="tipoItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TipoItem" inverseName="categoria" inverseEntity="TipoItem" syncable="YES"/>
+    </entity>
+    <entity name="ItemComum" representedClassName="ItemComum" syncable="YES">
+        <attribute name="custo" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dano" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="peso" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="protecao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pv" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoria" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="itemComum" inverseEntity="Categoria" syncable="YES"/>
+        <relationship name="raridade" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Raridade" inverseName="itemComum" inverseEntity="Raridade" syncable="YES"/>
+        <relationship name="tipoItem" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TipoItem" inverseName="itemComum" inverseEntity="TipoItem" syncable="YES"/>
+    </entity>
+    <entity name="ItemMagico" representedClassName="ItemMagico" syncable="YES">
+        <attribute name="custo" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dano" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dataCriacao" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="peso" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="protecao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pv" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="categoria" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Categoria" inverseName="itemMagico" inverseEntity="Categoria" syncable="YES"/>
+        <relationship name="raridade" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Raridade" inverseName="itemMagico" inverseEntity="Raridade" syncable="YES"/>
+        <relationship name="tipoItem" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TipoItem" inverseName="itemMagico" inverseEntity="TipoItem" syncable="YES"/>
+    </entity>
+    <entity name="Poder" representedClassName="Poder" syncable="YES">
+        <attribute name="arma" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="armadura" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="geral" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nivel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Raridade" representedClassName="Raridade">
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <relationship name="alquimia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alquimia" inverseName="raridade" inverseEntity="Alquimia" syncable="YES"/>
+        <relationship name="busca" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Busca" inverseName="raridade" inverseEntity="Busca" syncable="YES"/>
+        <relationship name="itemComum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemComum" inverseName="raridade" inverseEntity="ItemComum" syncable="YES"/>
+        <relationship name="itemMagico" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemMagico" inverseName="raridade" inverseEntity="ItemMagico" syncable="YES"/>
+    </entity>
+    <entity name="TipoAlquimia" representedClassName="TipoAlquimia">
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <relationship name="alquimia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alquimia" inverseName="tipo" inverseEntity="Alquimia" syncable="YES"/>
+        <relationship name="busca" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Busca" inverseName="tipoAlquimia" inverseEntity="Busca" syncable="YES"/>
+    </entity>
+    <entity name="TipoItem" representedClassName="TipoItem" syncable="YES">
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="busca" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Busca" inverseName="tipoItem" inverseEntity="Busca" syncable="YES"/>
+        <relationship name="categoria" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Categoria" inverseName="tipoItem" inverseEntity="Categoria" syncable="YES"/>
+        <relationship name="itemComum" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemComum" inverseName="tipoItem" inverseEntity="ItemComum" syncable="YES"/>
+        <relationship name="itemMagico" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemMagico" inverseName="tipoItem" inverseEntity="ItemMagico" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Alquimia" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="Busca" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="Categoria" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="ItemComum" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="ItemMagico" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="Poder" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="Raridade" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="TipoAlquimia" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="TipoItem" positionX="160" positionY="192" width="128" height="120"/>
+    </elements>
 </model>
