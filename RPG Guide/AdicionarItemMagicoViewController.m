@@ -248,25 +248,26 @@
         }	
         editavel = FALSE;
     }
+    
     [self.delegate AdicionarItemMagicoViewController:self didAddItem:Nil];
 }
 
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    self.itemMagico.nome = nomeTextField.text;
-    self.itemMagico.custo = [NSNumber numberWithDouble:[custoTextField.text doubleValue]];
-    self.itemMagico.peso = pesoTextField.text;
-    self.itemMagico.dano = danoTextField.text;
-    self.itemMagico.protecao = protecaoTextField.text;
-    self.itemMagico.pv = pvTextField.text;
-    self.itemMagico.descricao = descricaoTextField.text;
-    self.itemMagico.poder = poderTextField.text;
-    self.itemMagico.nivel = [NSNumber numberWithDouble:[nivelTextField.text doubleValue]];
-
-}
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    
+//    self.itemMagico.nome = nomeTextField.text;
+//    self.itemMagico.custo = [NSNumber numberWithDouble:[custoTextField.text doubleValue]];
+//    self.itemMagico.peso = pesoTextField.text;
+//    self.itemMagico.dano = danoTextField.text;
+//    self.itemMagico.protecao = protecaoTextField.text;
+//    self.itemMagico.pv = pvTextField.text;
+//    self.itemMagico.descricao = descricaoTextField.text;
+//    self.itemMagico.poder = poderTextField.text;
+//    self.itemMagico.nivel = [NSNumber numberWithDouble:[nivelTextField.text doubleValue]];
+//
+//}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -430,63 +431,63 @@
 
 - (IBAction)posicionarScroll:(id)sender{
         
-    UITextField *text = sender;
-    
-    if ((custoTextField != text) && (pesoTextField != text) && (danoTextField != text) && (protecaoTextField !=text) && (pvTextField != text) && (nomeTextField != text)&&(nivelTextField != text)) {
-
-        UITextView *text2 = sender;
-        scroller.contentOffset = CGPointMake(0, (text2.frame.origin.y-40));
-        if (poderTextField != text2) {
-            poderTextField.editable = FALSE;
-        }
-        else{
-            descricaoTextField.editable = FALSE;
-        }
-        btnPoder.enabled = FALSE;
-    }
-    else{ 
-        if (nomeTextField == text) {
-            scroller.contentOffset = CGPointMake(0, (text.frame.origin.y-40));
-
-        }else{
-            scroller.contentOffset = CGPointMake(0, (text.frame.origin.y));
-        }
-        
-        if (nomeTextField != text) {
-            nomeTextField.enabled = FALSE;
-        }
-        
-        if (custoTextField != text) {
-            custoTextField.enabled = FALSE;
-        }
-        if (pesoTextField != text) {
-            pesoTextField.enabled = FALSE;
-        }
-        if (danoTextField != text) {
-            danoTextField.enabled = FALSE;
-        }
-        if (protecaoTextField !=text) {
-            protecaoTextField.enabled = FALSE;
-        }
-        if (pvTextField != text) {
-            pvTextField.enabled = FALSE;
-        }
-        if (nivelTextField != text) {
-            nivelTextField.enabled = FALSE;
-        }
-        
-        descricaoTextField.editable =FALSE;
-        poderTextField.editable = FALSE;
-        descricaoTextField.userInteractionEnabled=FALSE;
-        poderTextField.userInteractionEnabled=FALSE;
-        
-    }
-    
-    scroller.scrollEnabled = FALSE;
-    tabela.hidden = TRUE;
-    
-    self.navigationItem.leftBarButtonItem.enabled = FALSE;
-    self.navigationItem.rightBarButtonItem.enabled = FALSE;
+//    UITextField *text = sender;
+//    
+//    if ((custoTextField != text) && (pesoTextField != text) && (danoTextField != text) && (protecaoTextField !=text) && (pvTextField != text) && (nomeTextField != text)&&(nivelTextField != text)) {
+//
+//        UITextView *text2 = sender;
+//        scroller.contentOffset = CGPointMake(0, (text2.frame.origin.y-40));
+//        if (poderTextField != text2) {
+//            poderTextField.editable = FALSE;
+//        }
+//        else{
+//            descricaoTextField.editable = FALSE;
+//        }
+//        btnPoder.enabled = FALSE;
+//    }
+//    else{ 
+//        if (nomeTextField == text) {
+//            scroller.contentOffset = CGPointMake(0, (text.frame.origin.y-40));
+//
+//        }else{
+//            scroller.contentOffset = CGPointMake(0, (text.frame.origin.y));
+//        }
+//        
+//        if (nomeTextField != text) {
+//            nomeTextField.enabled = FALSE;
+//        }
+//        
+//        if (custoTextField != text) {
+//            custoTextField.enabled = FALSE;
+//        }
+//        if (pesoTextField != text) {
+//            pesoTextField.enabled = FALSE;
+//        }
+//        if (danoTextField != text) {
+//            danoTextField.enabled = FALSE;
+//        }
+//        if (protecaoTextField !=text) {
+//            protecaoTextField.enabled = FALSE;
+//        }
+//        if (pvTextField != text) {
+//            pvTextField.enabled = FALSE;
+//        }
+//        if (nivelTextField != text) {
+//            nivelTextField.enabled = FALSE;
+//        }
+//        
+//        descricaoTextField.editable =FALSE;
+//        poderTextField.editable = FALSE;
+//        descricaoTextField.userInteractionEnabled=FALSE;
+//        poderTextField.userInteractionEnabled=FALSE;
+//        
+//    }
+//    
+//    scroller.scrollEnabled = FALSE;
+//    tabela.hidden = TRUE;
+//    
+//    self.navigationItem.leftBarButtonItem.enabled = FALSE;
+//    self.navigationItem.rightBarButtonItem.enabled = FALSE;
     
 }
 
@@ -524,20 +525,6 @@
     return TRUE;
 }
 
-//- (BOOL) textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
-//    
-//    if ([text isEqualToString:@"\n"]){
-//        if (descricaoTextField == textView){
-//            [self liberaTeclado:descricaoTextField];
-//        }
-//        else{
-//            [self liberaTeclado:poderTextField];
-//        }
-//        return FALSE;
-//    }
-//    
-//    return TRUE;
-//}
 
 - (BOOL)validaCampos{
     if (nomeTextField.text == nil || [descricaoTextField.text length] == 0 || [poderTextField.text length] == 0 || itemMagico.tipoItem == Nil || itemMagico.raridade == Nil ) {

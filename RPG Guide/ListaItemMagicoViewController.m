@@ -114,20 +114,6 @@
         if (buttonIndex == 1){
             
             [self performSegueWithIdentifier:@"AdicionarItemMagico" sender:self];
-            
-//            AdicionarItemMagicoViewController *addController = [[AdicionarItemMagicoViewController alloc] initWithNibName:@"AdicionarItemMagicoViewController" bundle:nil];
-//            addController.delegate = self;
-//            addController.managedObjectContext = self.managedObjectContext;
-//            addController.fetchedResultsController = self.fetchedResultsController;
-//            addController.estilo = self.estilo;
-//        
-//            ItemMagico *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"ItemMagico" inManagedObjectContext:self.managedObjectContext];
-//            addController.itemMagico = newItem;
-//            
-//            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
-//            [self presentModalViewController:navigationController animated:YES];
-            
-
 
         }
         else if (buttonIndex == 2){
@@ -198,6 +184,8 @@
 
 - (void) AdicionarItemMagicoViewController:(AdicionarItemMagicoViewController *)adicionarItem didAddItem:(ItemMagico *)itemMagico{
     
+    [self dismissViewControllerAnimated:YES completion:Nil];
+    
     if (itemMagico) {
         
         itemMagicoSelecionado = itemMagico;
@@ -205,7 +193,6 @@
     
     }
     
-//    [self dismissModalViewControllerAnimated:YES];
     [self.tableView reloadData];
     
 }
@@ -781,6 +768,7 @@
         AdicionarItemMagicoViewController *addController = (AdicionarItemMagicoViewController *)navigationController.topViewController;
         
         addController.delegate = self;
+        addController.managedObjectContext = managedObjectContext;
         addController.estilo = self.estilo;
         
         ItemMagico *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"ItemMagico" inManagedObjectContext:self.managedObjectContext];
