@@ -70,7 +70,7 @@
     self.navigationItem.rightBarButtonItem = saveButtonItem;
     
     [scroller setScrollEnabled:YES];
-//    [scroller setContentSize:CGSizeMake(320, 890)];
+    [scroller setContentSize:CGSizeMake(320, 900)];
     
 //    self.estilo = [Util VerificaEstilo];
     
@@ -234,7 +234,6 @@
     }
 }
 
-
 - (void)cancel {
 	
     if (!editavel){
@@ -253,21 +252,21 @@
 }
 
 
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [super viewWillDisappear:animated];
-//    
-//    self.itemMagico.nome = nomeTextField.text;
-//    self.itemMagico.custo = [NSNumber numberWithDouble:[custoTextField.text doubleValue]];
-//    self.itemMagico.peso = pesoTextField.text;
-//    self.itemMagico.dano = danoTextField.text;
-//    self.itemMagico.protecao = protecaoTextField.text;
-//    self.itemMagico.pv = pvTextField.text;
-//    self.itemMagico.descricao = descricaoTextField.text;
-//    self.itemMagico.poder = poderTextField.text;
-//    self.itemMagico.nivel = [NSNumber numberWithDouble:[nivelTextField.text doubleValue]];
-//
-//}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.itemMagico.nome = nomeTextField.text;
+    self.itemMagico.custo = [NSNumber numberWithDouble:[custoTextField.text doubleValue]];
+    self.itemMagico.peso = pesoTextField.text;
+    self.itemMagico.dano = danoTextField.text;
+    self.itemMagico.protecao = protecaoTextField.text;
+    self.itemMagico.pv = pvTextField.text;
+    self.itemMagico.descricao = descricaoTextField.text;
+    self.itemMagico.poder = poderTextField.text;
+    self.itemMagico.nivel = [NSNumber numberWithDouble:[nivelTextField.text doubleValue]];
+
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -495,15 +494,7 @@
     
     if (itemMagico.categoria != nil) {
         
-        itemMagico.poder = poderTextField.text;
-    
-        SelecionaPoderViewController *telaPoder =[SelecionaPoderViewController alloc];
-        telaPoder.estilo = self.estilo;
-        telaPoder.managedObjectContext = self.managedObjectContext;
-        telaPoder.fetchedResultsController = self.fetchedResultsController;
-        telaPoder.categoria = itemMagico.categoria.nome;
-        telaPoder.delegate = self;
-        [self.navigationController pushViewController:telaPoder animated:YES];
+        [self performSegueWithIdentifier:@"SelecionaPoder" sender:self];
         
     }
     else{
@@ -547,12 +538,12 @@
     if (tag==1) {
         [btnAnterior setEnabled:true];
     }
-    if (tag<4) {
+    if (tag<6) {
         [btnProximo setEnabled:true];
         UITextField *txtField = (UITextField *)[self.view viewWithTag:(tag+1)];
         [txtField becomeFirstResponder];
     }
-    else if (tag==4){
+    else if (tag==7){
         [btnProximo setEnabled:false];
         UITextView *txtView = (UITextView *)[self.view viewWithTag:(tag+1)];
         [txtView becomeFirstResponder];
@@ -638,5 +629,24 @@
     [alertView show];
     
 }
+
+#pragma mark Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"SelecionaPoder"]) {
+        
+        itemMagico.poder = poderTextField.text;
+        
+        SelecionaPoderViewController *telaPoder = segue.destinationViewController;
+        telaPoder.estilo = self.estilo;
+        telaPoder.managedObjectContext = self.managedObjectContext;
+        telaPoder.fetchedResultsController = self.fetchedResultsController;
+        telaPoder.categoria = itemMagico.categoria.nome;
+        telaPoder.delegate = self;
+    }
+}
+
+
 
 @end

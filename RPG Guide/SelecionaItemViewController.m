@@ -12,6 +12,7 @@
 #import "TipoItem.h"
 #import "DetalharItemMagicoViewController.h"
 #import "AdicionarItemMagicoViewController.h"
+#import "DetalheItemViewController.h"
 #import "util.h"
 
 @implementation SelecionaItemViewController
@@ -21,6 +22,7 @@
 @synthesize estilo;
 @synthesize prefixo;
 @synthesize sufixo;
+@synthesize itemSelecionado;
 
 @synthesize delegate;
 
@@ -44,8 +46,6 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
 	}
-    
-//    NSArray *buttonTitles = [[NSArray alloc] initWithObjects:@"Nome",@"Categoria",@"Raridade",@"Custo", nil];
     
 //    self.estilo = [Util VerificaEstilo];
     
@@ -168,23 +168,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [mySearchBar resignFirstResponder]; 
+    itemSelecionado = (ItemComum *)[fetchedResultsController objectAtIndexPath:indexPath];
     
-    AdicionarItemMagicoViewController *addController = [[AdicionarItemMagicoViewController alloc] initWithNibName:@"AdicionarItemMagicoViewController" bundle:nil];
-    addController.delegate = self;
-    addController.estilo = self.estilo;
-    addController.managedObjectContext = self.managedObjectContext;
-    addController.fetchedResultsController = self.fetchedResultsController;
-    
-    ItemComum *itemComum = (ItemComum *)[fetchedResultsController objectAtIndexPath:indexPath];
-    addController.itemComum = itemComum;
-    
-    ItemMagico *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"ItemMagico" inManagedObjectContext:self.managedObjectContext];
-    addController.itemMagico = newItem;
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
-//    [self presentModalViewController:navigationController animated:YES];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [self performSegueWithIdentifier:@"AdicionarItemMagico" sender:self];
+
 }
 
 #pragma mark -
@@ -320,5 +307,39 @@
     
 }
 
+#pragma mark Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"DetalharItem"]) {
+        
+        DetalheItemViewController *detailViewController = segue.destinationViewController;
+        detailViewController.itemComum = itemSelecionado;
+        detailViewController.estilo = self.estilo;
+        detailViewController.custoSu = self.sufixo;
+        detailViewController.custoPre = self.prefixo;
+        
+    }
+    if ([[segue identifier] isEqualToString:@"AdicionarItemMagico"]) {
+        
+        //UINavigationController *navigationController = segue.destinationViewController;
+        
+        //AdicionarItemMagicoViewController *addController = (AdicionarItemMagicoViewController *)navigationController.topViewController;
+        
+        AdicionarItemMagicoViewController *addController = segue.destinationViewController;
+        
+        addController.delegate = self;
+        addController.managedObjectContext = managedObjectContext;
+        addController.estilo = self.estilo;
+        
+        addController.itemComum = itemSelecionado;
+        
+        ItemMagico *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"ItemMagico" inManagedObjectContext:self.managedObjectContext];
+        
+        addController.itemMagico = newItem;
+        
+    }
+    
+}
 
 @end

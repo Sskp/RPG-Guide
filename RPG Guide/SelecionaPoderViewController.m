@@ -20,6 +20,7 @@
 @synthesize mySearchBar;
 @synthesize categoria;
 @synthesize delegate;
+@synthesize poderSelecionado;
 
 #pragma mark -
 #pragma mark UIViewController overrides
@@ -55,19 +56,6 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
 	}
-    
-    self.mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, 88.0)];
-    
-	self.mySearchBar.delegate = self;
-	self.mySearchBar.showsCancelButton = YES;
-	self.mySearchBar.autocorrectionType = UITextAutocorrectionTypeNo;	
-    
-    NSArray *buttonTitles = [[NSArray alloc] initWithObjects:@"Nome",@"Nivel", nil];
-    
-    self.mySearchBar.showsScopeBar = true;
-    self.mySearchBar.scopeButtonTitles = buttonTitles;
-    
-    self.tableView.tableHeaderView = self.mySearchBar;
 
 }
 
@@ -213,11 +201,9 @@
 
     flag = (BOOL)FALSE;
     
-    DetalharPoderViewController *detailViewController = [DetalharPoderViewController alloc];
-    detailViewController.poder = [fetchedResultsController objectAtIndexPath:indexPath];
-    detailViewController.estilo = self.estilo;
+    poderSelecionado = [fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"DetalharPoder" sender:self];
     
-    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -368,5 +354,20 @@
     [self.tableView reloadData];
     [mySearchBar resignFirstResponder];
 }
+
+
+#pragma mark Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"DetalharPoder"]) {
+        
+        DetalharPoderViewController *detailViewController = segue.destinationViewController;
+        detailViewController.poder = poderSelecionado;
+        detailViewController.estilo = self.estilo;
+        
+    }
+}
+
 
 @end

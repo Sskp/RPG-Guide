@@ -37,6 +37,8 @@
 @property (nonatomic, retain) NSString *prefixo;
 @property (nonatomic, retain) NSString *sufixo;
 
+@property (nonatomic, retain) ItemComum *itemSelecionado;
+
 - (void)resetSearch; 
 - (void)handleSearchForTerm:(NSString *)searchTerm;
 

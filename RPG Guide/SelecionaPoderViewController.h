@@ -10,6 +10,7 @@
 
 @protocol poderDelegate;
 @class Categoria;
+@class Poder;
 
 @interface SelecionaPoderViewController : UITableViewController<NSFetchedResultsControllerDelegate, UISearchBarDelegate>{
         
@@ -38,7 +39,7 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
     
-@property (nonatomic, retain) UISearchBar *mySearchBar;
+@property (nonatomic, retain) IBOutlet UISearchBar *mySearchBar;
     
 @property (nonatomic, retain) NSString *estilo;
 
@@ -47,6 +48,8 @@
 @property (nonatomic, assign) int nivel;
 
 @property (nonatomic, retain) NSString *categoria;
+
+@property (nonatomic, retain) Poder *poderSelecionado;
 
 - (void)resetSearch; 
 - (void)handleSearchForTerm:(NSString *)searchTerm;

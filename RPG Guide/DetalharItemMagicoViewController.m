@@ -57,7 +57,7 @@
         self.navigationItem.rightBarButtonItem = salvarButtonItem;
     }
     
-    UIFont *fonte = [Util FonteLabel:estilo];
+    //UIFont *fonte = [Util FonteLabel:estilo];
     
     nomeItem.text = itemMagico.nome;
     custoItem.text = [NSString stringWithFormat:@"%@%@ %@",self.custoPre, itemMagico.custo, self.custoSu];

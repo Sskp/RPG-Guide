@@ -53,16 +53,13 @@
 		abort();
 	}
     
-//    NSArray *buttonTitles = [[NSArray alloc] initWithObjects:@"Nome",@"Categoria",@"Raridade",@"Custo",@"Nivel", nil];
-
-
     //self.estilo = [Util VerificaEstilo];
     
     NSDictionary *config = [Util RetornaConfig];
     
     self.sufixo = [config valueForKey:@"CustoSu"];
     self.prefixo = [config valueForKey:@"CustoPre"];
-    
+       
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
@@ -118,43 +115,18 @@
         }
         else if (buttonIndex == 2){
             
-            [self performSegueWithIdentifier:@"SelecionarItemMagico" sender:self];
+            [self performSegueWithIdentifier:@"SelecionarItem" sender:self];
             
-//            SelecionaItemViewController *listaItem =[SelecionaItemViewController alloc];
-//            listaItem.delegate = self;
-//            listaItem.estilo = self.estilo;
-//            listaItem.managedObjectContext = self.managedObjectContext;
-//            
-//            [self.navigationController pushViewController:listaItem animated:YES];
-
         }
         else if (buttonIndex == 3){
             
             [self performSegueWithIdentifier:@"CriarItemMagico" sender:self];
             
-//            ItemMagico *im = [self gerarItemMagico];
-//            if (im) {
-//                AdicionarItemMagicoViewController *addController = [[AdicionarItemMagicoViewController alloc] initWithNibName:@"AdicionarItemMagicoViewController" bundle:nil];
-//                addController.delegate = self;
-//                addController.managedObjectContext = self.managedObjectContext;
-//                addController.fetchedResultsController = self.fetchedResultsController;
-//                addController.estilo = self.estilo;
-//            
-//                ItemMagico *newItem = [self gerarItemMagico];
-//                addController.itemMagico = newItem;
-//            
-//                UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
-//                [self presentModalViewController:navigationController animated:YES];
-//
-//            }
-            
         }
         else if (buttonIndex == 4){
             
-//            ItemMagico *im = [self gerarItemMagico];
-//            if (im) {
-//                [self showItem:im animated:YES novo:YES];
-//            }
+            itemMagicoSelecionado = [self gerarItemMagico];
+            [self performSegueWithIdentifier:@"DetalharItemMagicoNovo" sender:self];
             
         }
     }
@@ -165,20 +137,6 @@
     
     [mySearchBar resignFirstResponder];
     [self performSegueWithIdentifier:@"EditarItemMagico" sender:self];
-    
-//    AdicionarItemMagicoViewController *addController = [[AdicionarItemMagicoViewController alloc] initWithNibName:@"AdicionarItemMagicoViewController" bundle:nil];
-//    addController.delegate = self;
-//    addController.managedObjectContext = self.managedObjectContext;
-//    addController.fetchedResultsController = self.fetchedResultsController;
-//    addController.estilo = self.estilo;
-//    
-//    ItemMagico *itemM = (ItemMagico *)[fetchedResultsController objectAtIndexPath:indexPath];
-//    
-//	addController.itemMagico = itemM;
-//    addController.editavel = TRUE;
-//    
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addController];
-//    [self presentModalViewController:navigationController animated:YES];
 
 }
 
@@ -198,6 +156,10 @@
 }
 
 - (void) SelecionarItemViewController:(SelecionaItemViewController *)selecionarItem didAddItem:(ItemMagico *)itemMagico{
+  
+    [self.navigationController popViewControllerAnimated:NO];
+    [self.navigationController popViewControllerAnimated:NO];
+    //    [self dismissViewControllerAnimated:YES completion:Nil];
     
     if (itemMagico) {
         
@@ -205,24 +167,9 @@
         [self performSegueWithIdentifier:@"DetalharItemMagico" sender:self];
     }
     
-//    [self dismissModalViewControllerAnimated:YES];
     [self.tableView reloadData];
     
 }
-
-//- (void) showItem:(ItemMagico *)itemMagico animated:(BOOL)animated novo:(BOOL)novo{
-//    
-//    DetalharItemMagicoViewController *detailViewController = [DetalharItemMagicoViewController alloc];
-//    detailViewController.itemMagico = itemMagico;
-//    detailViewController.estilo = self.estilo;
-//    detailViewController.custoSu = self.sufixo;
-//    detailViewController.custoPre = self.prefixo;
-//    detailViewController.habilitaSalvar = novo;
-//    
-//    [self.navigationController pushViewController:detailViewController animated:animated];
-//    [detailViewController release];
-//}
-
 
 #pragma mark -
 #pragma mark Table view methods
@@ -783,12 +730,48 @@
         AdicionarItemMagicoViewController *addController = (AdicionarItemMagicoViewController *)navigationController.topViewController;
         
         addController.delegate = self;
+        addController.managedObjectContext = managedObjectContext;
         addController.estilo = self.estilo;
-        
+        addController.editavel = true;
+
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ItemComum *newItem = (ItemComum *)[fetchedResultsController objectAtIndexPath:indexPath];
+        ItemMagico *editItem = (ItemMagico *)[fetchedResultsController objectAtIndexPath:indexPath];
         
-        addController.itemComum = newItem;
+        addController.itemMagico = editItem;
+        
+    }
+    if ([[segue identifier] isEqualToString:@"SelecionarItem"]) {
+        
+        SelecionaItemViewController *listaItem = segue.destinationViewController;
+        
+        listaItem.delegate = self;
+        listaItem.estilo = self.estilo;
+        listaItem.managedObjectContext = self.managedObjectContext;
+
+    }
+    if ([[segue identifier] isEqualToString:@"CriarItemMagico"]) {
+    
+        ItemMagico *im = [self gerarItemMagico];
+        if (im) {
+            UINavigationController *navigationController = segue.destinationViewController;
+            
+            AdicionarItemMagicoViewController *addController = (AdicionarItemMagicoViewController *)navigationController.topViewController;
+            addController.delegate = self;
+            addController.managedObjectContext = self.managedObjectContext;
+            addController.estilo = self.estilo;
+
+            //ItemMagico *newItem = [self gerarItemMagico];
+            addController.itemMagico = im;
+        }
+    }
+    if ([[segue identifier] isEqualToString:@"DetalharItemMagicoNovo"]) {
+        
+        DetalharItemMagicoViewController *detailViewController = segue.destinationViewController;
+        detailViewController.itemMagico = itemMagicoSelecionado;
+        detailViewController.estilo = self.estilo;
+        detailViewController.custoSu = self.sufixo;
+        detailViewController.custoPre = self.prefixo;
+        detailViewController.habilitaSalvar = true;
         
     }
 }
